@@ -77,7 +77,7 @@ export default class App extends React.Component {
             <View style={styles.container} >
               {
                 isFace ? (
-                  <View style={styles.container}>
+                  <View>
                     {/* <Text>Congratulations you are logged in successfully</Text> */}
                     <Quiz quiz={quiz} />
                   </View>
