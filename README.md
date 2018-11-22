@@ -1,4 +1,4 @@
-######4 simple steps to run this quiz app
+##4 simple steps to run this quiz app
 
 1. Open the link in your PC - https://exp.host/@manalliaquat/rn-quiz-app
 2. Then grab your smartphone and install EXPO application from App Store (iOS) or Play Store (Android)
@@ -6,7 +6,7 @@
 4. Touch "Scan QR Code".
 
 
-######Source Code
+##Source Code
 
 1. git clone https://github.com/ManalLiaquat/rn-quiz-app.git
 2. npm install
