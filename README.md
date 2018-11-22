@@ -1,4 +1,4 @@
-### 4 simple steps to run this quiz app
+### 4 Simple Steps to Run this Quiz App
 
 1. Open the link in your PC - https://exp.host/@manalliaquat/rn-quiz-app
 2. Then grab your smartphone and install EXPO application from App Store (iOS) or Play Store (Android)
