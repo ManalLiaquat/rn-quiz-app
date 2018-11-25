@@ -21,6 +21,15 @@ export default class Quiz extends React.Component {
     this.timer = this.timer.bind(this);
     this.endQuiz = this.endQuiz.bind(this);
     this.reTake = this.reTake.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+  }
+
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
 
   timer() {
@@ -89,6 +98,18 @@ export default class Quiz extends React.Component {
               <Text>Timer: {min}:{sec}</Text>
               {
                 quiz.map((v, i) => {
+
+                  let myArray = [];
+                  myArray.push(v.correct_answer);
+                  v.incorrect_answers.map(value => {
+                    myArray.push(value);
+                  })
+                  console.log(myArray);
+                  let shuffledArray = this.shuffle(myArray)
+
+                  console.log(shuffledArray);
+
+
                   var radio_props = [
                     { label: v.correct_answer, value: v.correct_answer },
                     { label: v.incorrect_answers[0], value: v.incorrect_answers[0] },
