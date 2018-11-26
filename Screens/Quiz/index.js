@@ -101,21 +101,15 @@ export default class Quiz extends React.Component {
 
                   let myArray = [];
                   myArray.push(v.correct_answer);
-                  v.incorrect_answers.map(value => {
-                    myArray.push(value);
-                  })
-                  console.log(myArray);
-                  let shuffledArray = this.shuffle(myArray)
-
-                  console.log(shuffledArray);
+                  v.incorrect_answers.map(value => { myArray.push(value) })
+                  // let shuffledArray = this.shuffle(myArray)
+                  // myArray = [];
+                  console.log(v, "data****")
 
 
-                  var radio_props = [
-                    { label: v.correct_answer, value: v.correct_answer },
-                    { label: v.incorrect_answers[0], value: v.incorrect_answers[0] },
-                    { label: v.incorrect_answers[1], value: v.incorrect_answers[1] },
-                    { label: v.incorrect_answers[2], value: v.incorrect_answers[2] }
-                  ];
+                  var radio_props = myArray.map(radioVal => {
+                    return { label: radioVal, value: radioVal }
+                  });
 
                   return (
                     <View key={`${v.category}_${i}`}>
