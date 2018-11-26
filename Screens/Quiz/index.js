@@ -21,7 +21,7 @@ export default class Quiz extends React.Component {
     this.timer = this.timer.bind(this);
     this.endQuiz = this.endQuiz.bind(this);
     this.reTake = this.reTake.bind(this);
-    this.shuffle = this.shuffle.bind(this);
+    // this.shuffle = this.shuffle.bind(this);
   }
 
   // shuffle(a) {
@@ -95,7 +95,7 @@ export default class Quiz extends React.Component {
         {
           showQuiz ? (
             <ScrollView>
-              <Text>Timer: {min}:{sec}</Text>
+              <Text style={styles.timer}>Timer: {min}:{sec}</Text>
               {
                 quiz.map((v, i) => {
 
@@ -113,7 +113,7 @@ export default class Quiz extends React.Component {
 
                   return (
                     <View key={`${v.category}_${i}`}>
-                      <Text style={{ marginBottom: 5 }}>Q. {v.question}</Text>
+                      <Text style={{ marginBottom: 5 }}>Q{i + 1}. {v.question}</Text>
 
                       <RadioForm radio_props={radio_props}
                         formHorizontal={false}
@@ -169,5 +169,10 @@ const styles = StyleSheet.create({
     borderStyle: "dashed",
     borderWidth: 1,
     borderColor: "black",
+  },
+  timer: {
+    color: 'red',
+    fontSize: 20,
+    textAlign: "center",
   }
 });
