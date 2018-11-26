@@ -24,13 +24,13 @@ export default class Quiz extends React.Component {
     this.shuffle = this.shuffle.bind(this);
   }
 
-  shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
+  // shuffle(a) {
+  //   for (let i = a.length - 1; i > 0; i--) {
+  //     const j = Math.floor(Math.random() * (i + 1));
+  //     [a[i], a[j]] = [a[j], a[i]];
+  //   }
+  //   return a;
+  // }
 
   timer() {
     this.timeStart = setInterval(() => {
@@ -88,7 +88,7 @@ export default class Quiz extends React.Component {
 
   render() {
     let { quiz, value, correct, min, sec, showQuiz, score } = this.state
-    console.log(value);
+    // console.log(value);
 
     return (
       <View style={styles.container}>
@@ -104,7 +104,7 @@ export default class Quiz extends React.Component {
                   v.incorrect_answers.map(value => { myArray.push(value) })
                   // let shuffledArray = this.shuffle(myArray)
                   // myArray = [];
-                  console.log(v, "data****")
+                  // console.log(v, "data****")
 
 
                   var radio_props = myArray.map(radioVal => {
