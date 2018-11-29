@@ -1,9 +1,9 @@
-### Just Download the APK file and Install it
+### Method 1 - Just Download the APK file and Install it
 
 1. Click [Here](https://expo.io/artifacts/ee6b54c5-5fc1-40f2-bed4-a155193d60f3 "Quiz App") to Download APK File for android
 
 
-### 4 Simple Steps to Run this Quiz App
+### Method 2 - Four Simple Steps to Run this Quiz App
 
 1. Open the link in your PC - https://exp.host/@manalliaquat/rn-quiz-app
 2. Then grab your smartphone and install EXPO application from App Store (iOS) or Play Store (Android)
@@ -11,7 +11,7 @@
 4. Touch "Scan QR Code".
 
 
-### Source Code
+### Method 3 - Source Code
 
 1. git clone https://github.com/ManalLiaquat/rn-quiz-app.git
 2. npm install
