@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
-import { Camera, Permissions, FaceDetector } from 'expo';
+import { Camera, Permissions, FaceDetector, Font } from 'expo';
 import Quiz from "./Screens/Quiz";
 
 export default class App extends React.Component {
@@ -18,7 +18,7 @@ export default class App extends React.Component {
   }
 
   handleFacesDetected(param) {
-    console.log(param.faces, "Hello");
+    console.log(param.faces, "DETECTING FACE...");
     this.setState({
       isFace: param.faces.length > 0 ? true : false,
       isCameraOpen: param.faces.length > 0 ? false : true
@@ -35,6 +35,9 @@ export default class App extends React.Component {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({ hasCameraPermission: status === 'granted' });
     this.getQuiz()
+    Font.loadAsync({
+      'PacificoRegular': require('./assets/fonts/Pacifico-Regular.ttf'),
+    });
   }
 
   render() {
@@ -76,17 +79,13 @@ export default class App extends React.Component {
         ) : (
             <View style={styles.container} >
               {
-                isFace ? (
+                isFace ? <Quiz quiz={quiz} /> : (
                   <View>
-                    {/* <Text>Congratulations you are logged in successfully</Text> */}
-                    <Quiz quiz={quiz} />
+                    <Text>Sign in with your face using camera</Text>
+                    <Button color="green" onPress={() => { this.setState({ isCameraOpen: true }) }} title="Log In" />
+                    {/* <Button color="green" onPress={() => { this.setState({ isFace: true }) }} title="Log In" /> */}
                   </View>
-                ) : (
-                    <View>
-                      <Text>Sign in with your face using camera</Text>
-                      <Button color="green" onPress={() => { this.setState({ isCameraOpen: true }) }} title="Log In" />
-                    </View>
-                  )
+                )
               }
             </View>
           )
@@ -101,5 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: "PacificoRegular"
   },
 });
