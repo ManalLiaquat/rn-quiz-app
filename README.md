@@ -1,3 +1,8 @@
+### Just Download the APK file and Install it
+
+1. Click [Here](https://expo.io/artifacts/ee6b54c5-5fc1-40f2-bed4-a155193d60f3 "Quiz App") to Download APK File for android
+
+
 ### 4 Simple Steps to Run this Quiz App
 
 1. Open the link in your PC - https://exp.host/@manalliaquat/rn-quiz-app
